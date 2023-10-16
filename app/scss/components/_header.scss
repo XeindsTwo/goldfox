@@ -1,0 +1,23 @@
+.header {
+  margin: 24px 0 32px;
+
+  &__inner {
+    background-color: $black200;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    padding: 14px 20px;
+    border-radius: 12px;
+  }
+
+  &__text {
+    padding: 5px 0 5px 16px;
+    margin-left: 16px;
+    border-left: 2px solid #48464A;
+    font-weight: 500;
+  }
+
+  &__btn {
+    margin-left: auto;
+  }
+}
