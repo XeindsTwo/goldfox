@@ -67,8 +67,12 @@ html {
   }
 }
 
+.path {
+  transition: all .3s;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {

@@ -1,9 +1,34 @@
-const menuBtn = document.querySelector('.menu-btn');
-const header = document.querySelector('.header__inner');
-const body = document.body;
+document.querySelector('.filters__btn').addEventListener('click', function () {
+    const filtersContent = document.querySelector('.filters__content');
+    const currentHeight = window.getComputedStyle(filtersContent).height;
 
-menuBtn.addEventListener("click", function (event) {
-    header.classList.toggle('header__inner--active');
-    body.classList.toggle('body--active');
-    menuBtn.classList.toggle('active');
+    if (currentHeight !== '0px' && currentHeight !== 'auto') {
+        filtersContent.style.height = '0px';
+        filtersContent.style.marginTop = '0px';
+    } else {
+        const clone = filtersContent.cloneNode(true);
+        clone.style.position = 'absolute';
+        clone.style.visibility = 'hidden';
+        clone.style.height = 'auto';
+        document.body.appendChild(clone);
+        const contentHeight = clone.clientHeight;
+        document.body.removeChild(clone);
+        filtersContent.style.height = contentHeight + 'px';
+        filtersContent.style.marginTop = '50px';
+    }
 });
+
+const showAllButton = document.getElementById('showAllButton');
+const modelsList = document.querySelector('.models__list');
+const modelsContainer = document.querySelector('.models'); // Добавляем эту строку
+
+showAllButton.addEventListener('click', function () {
+    modelsContainer.classList.add('show-all'); // Меняем на modelsContainer
+    showAllButton.classList.remove('active'); // Убираем кнопку "Показать всех"
+});
+
+// Проверяем количество моделей и, если оно больше 6, показываем кнопку "Показать всех"
+const models = modelsList.querySelectorAll('.model');
+if (models.length > 6) {
+    showAllButton.classList.add('active');
+}

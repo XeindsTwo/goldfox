@@ -1,5 +1,5 @@
 .filters {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 
   &__top {
     display: flex;
@@ -57,13 +57,82 @@
     padding: 13px 18px;
 
     &:hover {
+      color: $gray100;
+
       .filters__path {
-        stroke: $white;
+        stroke: $gray100;
       }
     }
   }
 
   &__path {
     transition: all .3s;
+  }
+
+  &__content {
+    height: 0;
+    overflow: hidden;
+    transition: height .6s ease-in-out, margin-top .6s ease-in-out;
+  }
+
+  &__content-top {
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 75px;
+  }
+
+  &__content-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 100px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+
+    &--one {
+      padding-left: 32px;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+
+    &::after {
+      @include pseudo;
+      width: 185px;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #313033;
+    }
+  }
+
+  &__chapter {
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &-item {
+      display: flex;
+    }
   }
 }

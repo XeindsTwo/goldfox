@@ -1,5 +1,9 @@
 .footer {
-  margin-bottom: 65px;
+  margin-bottom: 60px;
+
+  .logo {
+    align-self: flex-start;
+  }
 
   &__inner {
     padding: 40px 18px 0;
@@ -33,7 +37,8 @@
   }
 
   &__column-one,
-  &__column-two {
+  &__column-two,
+  &__column-three {
     position: relative;
 
     &::after {
@@ -59,7 +64,11 @@
   &__column-three {
     max-width: 390px;
     width: 100%;
-    padding: 0 70px;
+    padding: 0 60px;
+  }
+
+  &__column-telegram {
+    padding-left: 50px;
   }
 
   &__column-text {
@@ -71,6 +80,34 @@
     color: #E6E1E6;
     line-height: 1;
     margin-bottom: 13px;
+
+    &--small {
+      font-size: 14px;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+  }
+
+  &__column-link {
+    border-radius: 12px;
+    background-color: $blue;
+    border: 2px solid transparent;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 20px;
+    @include flex-center;
+    gap: 8px;
+    transition: background-color .3s, opacity .3s;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $blue;
+    }
+
+    &:focus {
+      opacity: .6;
+    }
   }
 
   &__list {
