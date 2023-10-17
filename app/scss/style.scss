@@ -5,7 +5,9 @@
 @import 'libs';
 @import 'global';
 
-// Components
 @import 'components/header';
 @import 'components/footer';
 @import 'components/filters';
+@import 'components/model-card';
+
+@import 'models';
