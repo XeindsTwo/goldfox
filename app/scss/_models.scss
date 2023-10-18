@@ -20,6 +20,9 @@
 
   &__show-btn {
     display: none;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
     position: absolute;
     bottom: 10px;
     z-index: 100;
@@ -32,6 +35,10 @@
 
     &:hover {
       color: $accent;
+
+      .path {
+        stroke: $accent
+      }
     }
 
     &:focus {
@@ -39,7 +46,7 @@
     }
 
     &.active {
-      display: block;
+      display: flex;
     }
   }
 }

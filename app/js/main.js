@@ -20,14 +20,13 @@ document.querySelector('.filters__btn').addEventListener('click', function () {
 
 const showAllButton = document.getElementById('showAllButton');
 const modelsList = document.querySelector('.models__list');
-const modelsContainer = document.querySelector('.models'); // Добавляем эту строку
+const modelsContainer = document.querySelector('.models');
 
 showAllButton.addEventListener('click', function () {
-    modelsContainer.classList.add('show-all'); // Меняем на modelsContainer
-    showAllButton.classList.remove('active'); // Убираем кнопку "Показать всех"
+    modelsContainer.classList.add('show-all');
+    showAllButton.classList.remove('active');
 });
 
-// Проверяем количество моделей и, если оно больше 6, показываем кнопку "Показать всех"
 const models = modelsList.querySelectorAll('.model');
 if (models.length > 6) {
     showAllButton.classList.add('active');
