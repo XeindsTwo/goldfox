@@ -1,15 +1,20 @@
 document.querySelector('.filters__btn').addEventListener('click', function () {
     const filtersContent = document.querySelector('.filters__content');
+    const filtersBtn = document.querySelector('.filters__btn');
     const currentHeight = window.getComputedStyle(filtersContent).height;
 
     if (currentHeight !== '0px' && currentHeight !== 'auto') {
         filtersContent.style.height = '0px';
         filtersContent.style.marginTop = '0px';
+        filtersBtn.classList.remove('active');
+        filtersBtn.blur();
     } else {
         const clone = filtersContent.cloneNode(true);
         clone.style.position = 'absolute';
         clone.style.visibility = 'hidden';
         clone.style.height = 'auto';
+        filtersBtn.classList.toggle('active');
+        filtersBtn.blur();
         document.body.appendChild(clone);
         const contentHeight = clone.clientHeight;
         document.body.removeChild(clone);

@@ -15,6 +15,10 @@
 
   &:hover {
     color: $accent;
+
+    .checkmark {
+      border-color: $accent;
+    }
   }
 
   &__input {
@@ -30,15 +34,17 @@
     height: 20px;
     border: 2px solid #605D62;
     border-radius: 4px;
-    transition: border .3s;
+    transition: border .3s, background-color .3s;
 
     &::after {
       @include pseudo;
-      left: 4px;
-      top: 4px;
-      width: 8px;
-      height: 8px;
-      background-color: $accent;
+      @include top50;
+      content: '\2713';
+      color: #000;
+      top: 2px;
+      right: 1px;
+      width: 14px;
+      height: 10px;
       opacity: 0;
       transition: opacity 0.3s;
     }
@@ -47,7 +53,8 @@
 
 .custom-checkbox input:checked {
   & + .checkmark {
-    border-color: $accent;
+    border-color: transparent;
+    background-color: $accent;
 
     &::after {
       opacity: 1;

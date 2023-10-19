@@ -22,8 +22,9 @@
     font-weight: 700;
 
     &:hover {
-      background-color: #EF6262;
+      background-color: $accent;
       border-color: transparent;
+      color: $black200;
     }
 
     &:focus {
@@ -57,6 +58,16 @@
     padding: 13px 18px;
 
     &:hover {
+      color: $gray100;
+
+      .filters__path {
+        stroke: $gray100;
+      }
+    }
+
+    &.active {
+      background-color: transparent;
+      border-color: $accent;
       color: $gray100;
 
       .filters__path {

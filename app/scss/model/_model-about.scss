@@ -36,6 +36,30 @@
     grid-gap: 35px;
   }
 
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    display: block;
+
+    &:after {
+      @include pseudo;
+      bottom: 0;
+      left: 0;
+      width: 185px;
+      height: 2px;
+      background-color: #313033;
+    }
+  }
 
   &__deposit {
 
