@@ -1,0 +1,37 @@
+.field {
+  background-color: #313033;
+  font-weight: 600;
+  padding: 13px 16px;
+  display: block;
+  border: 2px solid transparent;
+  width: 100%;
+  border-radius: 14px;
+  color: $white;
+  transition: color .3s, opacity .3s, background-color .3s;
+
+  &:hover {
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  &:focus {
+    background-color: transparent;
+    border-color: #313033;
+  }
+
+  &::placeholder {
+    color: #939094;
+    transition: color .3s;
+  }
+}
+
+.textarea {
+  min-height: 80px;
+  max-height: 320px;
+  resize: vertical;
+
+  &--big {
+    min-height: 250px;
+  }
+}

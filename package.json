@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "gulp-imagemin": "^7.1.0",
+    "jquery": "^3.7.1",
+    "rateyo": "^2.3.2",
+    "star-rating.js": "^4.3.0",
+    "swiper": "^10.3.1",
     "urix": "^0.1.0"
   },
   "name": "gulp-start",

@@ -1,0 +1,11 @@
+.error {
+  color: $red;
+  display: none;
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 14px;
+
+  &--active {
+    display: block;
+  }
+}
