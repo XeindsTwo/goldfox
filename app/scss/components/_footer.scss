@@ -12,6 +12,9 @@
     @media (max-width: 1230px) {
       align-self: center;
     }
+    @include r($sm) {
+      align-self: flex-start;
+    }
   }
 
   &__inner {
@@ -27,6 +30,9 @@
     @media (max-width: 1230px) {
       flex-direction: column;
       gap: 50px;
+    }
+    @include r($sm) {
+      padding: 35px 0 0;
     }
     @include r($phone) {
       gap: 45px;
@@ -53,6 +59,10 @@
     @media (max-width: 1230px) {
       margin: 0 auto;
       text-align: center;
+    }
+    @include r($sm) {
+      margin: 0;
+      text-align: left;
     }
 
     &-text {
@@ -159,6 +169,9 @@
     transition: background-color .3s, opacity .3s;
     @media (max-width: 1230px) {
       align-self: center;
+    }
+    @include r($sm) {
+      align-self: flex-start;
     }
 
     &:hover {
