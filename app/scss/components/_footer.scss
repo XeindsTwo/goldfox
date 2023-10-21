@@ -6,7 +6,7 @@
   }
 
   &__inner {
-    padding: 40px 18px 0;
+    padding: 40px 16px 0;
     border-top: 2px solid #48464A;
     display: flex;
     font-size: 14px;
@@ -65,6 +65,10 @@
     max-width: 390px;
     width: 100%;
     padding: 0 60px;
+    @media (max-width: 1450px) {
+      max-width: 350px;
+      padding: 0 40px;
+    }
   }
 
   &__column-telegram {
