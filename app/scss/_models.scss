@@ -27,8 +27,21 @@
     }
     @media (max-width: 800px) {
       grid-template-columns: repeat(1, 1fr);
+      .model__img-link {
+        height: 700px;
+      }
+    }
+    @include r($tablet) {
+      .model__img-link {
+        height: 600px;
+      }
     }
     @include r($sm) {
+      .model__img-link {
+        height: 500px;
+      }
+    }
+    @include r($phone) {
       .model__img-link {
         height: 400px;
       }
