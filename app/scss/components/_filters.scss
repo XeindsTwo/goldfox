@@ -140,6 +140,9 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
+      @include r($phone) {
+        gap: 19px;
+      }
     }
 
     &-item {

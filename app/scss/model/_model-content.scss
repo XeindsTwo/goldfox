@@ -165,6 +165,9 @@
       font-size: 24px;
       margin-bottom: 25px;
     }
+    @media (max-width: 380px) {
+      font-size: 22px;
+    }
   }
 
   &__options {
@@ -213,6 +216,9 @@
       margin-bottom: 35px;
       text-align: left;
     }
+    @include r($sm) {
+      margin-bottom: 20px;
+    }
   }
 
   &__pricing {
@@ -227,6 +233,9 @@
       gap: 30px;
       max-width: 250px;
       width: 100%;
+    }
+    @include r($phone) {
+      max-width: 100%;
     }
 
     &-column {

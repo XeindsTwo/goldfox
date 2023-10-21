@@ -1,8 +1,17 @@
 .footer {
-  padding-bottom: 60px;
+  padding-bottom: 50px;
+  @media (max-width: 1430px) {
+    padding-bottom: 35px;
+  }
+  @include r($phone) {
+    padding-bottom: 30px;
+  }
 
   .logo {
     align-self: flex-start;
+    @media (max-width: 1230px) {
+      align-self: center;
+    }
   }
 
   &__inner {
@@ -11,6 +20,17 @@
     display: flex;
     font-size: 14px;
     align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1430px) {
+      padding-top: 35px;
+    }
+    @media (max-width: 1230px) {
+      flex-direction: column;
+      gap: 50px;
+    }
+    @include r($phone) {
+      gap: 45px;
+    }
   }
 
   &__column-text,
@@ -30,6 +50,10 @@
     flex-direction: column;
     justify-content: center;
     align-self: stretch;
+    @media (max-width: 1230px) {
+      margin: 0 auto;
+      text-align: center;
+    }
 
     &-text {
       color: #AEAAAF;
@@ -48,6 +72,9 @@
       width: 2px;
       background-color: #48464A;
       right: 0;
+      @media (max-width: 1230px) {
+        display: none;
+      }
     }
   }
 
@@ -58,6 +85,9 @@
     width: 100%;
     gap: 20px;
     padding-right: 48px;
+    @media (max-width: 1230px) {
+      padding: 0;
+    }
   }
 
   &__column-two,
@@ -69,10 +99,26 @@
       max-width: 350px;
       padding: 0 40px;
     }
+    @media (max-width: 1330px) {
+      max-width: 305px;
+      padding: 0 35px;
+    }
+    @media (max-width: 1230px) {
+      padding: 0;
+    }
   }
 
   &__column-telegram {
     padding-left: 50px;
+    @media (max-width: 1450px) {
+      padding-left: 40px;
+    }
+    @media (max-width: 1330px) {
+      padding-left: 35px;
+    }
+    @media (max-width: 1230px) {
+      padding: 0;
+    }
   }
 
   &__column-text {
@@ -84,6 +130,13 @@
     color: #E6E1E6;
     line-height: 1;
     margin-bottom: 13px;
+    @include r($tablet) {
+      font-size: 24px;
+    }
+    @include r($phone) {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
 
     &--small {
       font-size: 14px;
@@ -94,6 +147,7 @@
 
   &__column-link {
     border-radius: 12px;
+    align-self: flex-start;
     background-color: $blue;
     border: 2px solid transparent;
     line-height: 1;
@@ -103,6 +157,9 @@
     @include flex-center;
     gap: 8px;
     transition: background-color .3s, opacity .3s;
+    @media (max-width: 1230px) {
+      align-self: center;
+    }
 
     &:hover {
       background-color: transparent;
@@ -120,6 +177,11 @@
     justify-content: center;
     display: flex;
     gap: 35px;
+    @include r($phone) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      text-align: center;
+    }
   }
 
   &__link {

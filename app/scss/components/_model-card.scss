@@ -4,11 +4,19 @@
   gap: 16px;
   background-color: $black200;
   border-radius: 20px;
+  @media (max-width: 1400px) {
+    padding: 16px;
+    gap: 25px;
+    flex-direction: column;
+  }
 
   &__left {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    @media (max-width: 1400px) {
+      gap: 26px;
+    }
 
     &-decor {
       max-width: 180px;
@@ -16,6 +24,9 @@
       height: 2px;
       background-color: #605D62;
       border-radius: 50%;
+      @media (max-width: 1400px) {
+        max-width: 100%;
+      }
     }
   }
 
@@ -24,6 +35,9 @@
     transition: opacity .3s;
     overflow: hidden;
     border-radius: 12px;
+    @media (max-width: 1400px) {
+      height: 380px;
+    }
 
     &:hover {
       .model__img {
@@ -39,16 +53,24 @@
   &__img {
     @include objectCoverBg;
     transition: transform .3s;
+    @media (max-width: 1400px) {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &__left-info {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    @include r($lg) {
+      gap: 11px;
+    }
   }
 
   &__name {
     font-weight: 700;
+    font-size: 18px;
 
     &-link {
       align-self: flex-start;
@@ -68,10 +90,24 @@
   &__info {
     width: 100%;
     max-width: 184px;
+    @media (max-width: 1400px) {
+      max-width: 100%;
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px;
+    }
+    @include r($phone) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 30px;
+    }
   }
 
   &__options {
     padding: 8px 10px;
+    @media (max-width: 1400px) {
+      padding: 0;
+    }
   }
 
   &__options,
@@ -83,6 +119,9 @@
 
   &__options {
     margin-bottom: 24px;
+    @media (max-width: 1400px) {
+      margin-bottom: 0;
+    }
 
     &-item {
       display: flex;
