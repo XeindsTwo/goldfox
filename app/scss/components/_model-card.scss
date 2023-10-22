@@ -10,9 +10,15 @@
     flex-direction: column;
   }
 
-  &__left {
+  &__left,
+  &__left-info,
+  &__options,
+  &__pricing {
     display: flex;
     flex-direction: column;
+  }
+
+  &__left {
     gap: 32px;
     @media (max-width: 1400px) {
       gap: 26px;
@@ -60,8 +66,6 @@
   }
 
   &__left-info {
-    display: flex;
-    flex-direction: column;
     gap: 14px;
     @include r($lg) {
       gap: 11px;
@@ -112,8 +116,6 @@
 
   &__options,
   &__pricing {
-    display: flex;
-    flex-direction: column;
     gap: 14px;
   }
 

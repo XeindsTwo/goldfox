@@ -15,6 +15,9 @@
     margin-left: 16px;
     border-left: 2px solid #48464A;
     font-weight: 500;
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
 
   &__btn {

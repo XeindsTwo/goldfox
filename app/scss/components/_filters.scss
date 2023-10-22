@@ -1,17 +1,42 @@
 .filters {
   margin-bottom: 50px;
+  overflow-x: hidden;
 
-  &__top {
+  .container {
+    @include r($lg) {
+      padding-right: 0;
+    }
+  }
+
+  &__top,
+  &__content-top,
+  &__btn {
     display: flex;
     align-items: center;
+  }
+
+  &__top {
     gap: 40px;
     justify-content: space-between;
+    @include r($desktop) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
   }
 
   &__selectors {
     display: flex;
     gap: 12px;
     line-height: 1;
+    @include r($lg) {
+      overflow-x: scroll;
+      width: 100%;
+      padding-right: 15px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   &__select-btn {
@@ -20,6 +45,9 @@
     border-radius: 14px;
     transition: color .3s, opacity .3s, background-color .3s, border .3s;
     font-weight: 700;
+    @include r($sm) {
+      padding: 15px 20px;
+    }
 
     &:hover {
       background-color: $accent;
@@ -52,8 +80,6 @@
   }
 
   &__btn {
-    align-items: center;
-    display: flex;
     gap: 10px;
     padding: 13px 18px;
 
@@ -88,10 +114,17 @@
 
   &__content-top {
     padding-left: 16px;
-    display: flex;
-    align-items: center;
     gap: 32px;
     margin-bottom: 75px;
+    @include r($tablet) {
+      flex-direction: column;
+      gap: 25px;
+      align-items: flex-start;
+      margin-bottom: 45px;
+    }
+    @include r($sm) {
+      padding-left: 0;
+    }
   }
 
   &__content-title {
@@ -104,15 +137,39 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 100px;
+    @media (max-width: 1400px) {
+      grid-gap: 70px;
+    }
+    @include r($desktop) {
+      grid-gap: 50px;
+      padding-left: 16px;
+    }
+    @include r($lg) {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    @include r($tablet) {
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    }
+    @include r($sm) {
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      padding-left: 0;
+      grid-gap: 40px;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     gap: 55px;
+    @include r($sm) {
+      gap: 40px;
+    }
 
     &--one {
       padding-left: 32px;
+      @include r($desktop) {
+        padding-left: 0;
+      }
     }
   }
 
